@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0070)https://www.fit.vutbr.cz/study/courses/IIS/private/projekt/doc.html.cs -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Projekt IIS</title>
+    <style type="text/css">
+    	table { border-collapse: collapse; }
+    	td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    	dt { font-weight: bold; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu
+     podle použitého editoru -->
+
+<h1>2. Knihovna: vyhledávání, rezervace, půjčování a objednávání knih</h1> <!-- Nahradte názvem svého zadání -->
+
+<dl>
+	<dt>Autoři</dt>
+	<dd>Jakub Novotný <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xnovot2a@vutbr.cz">xnovot2a@vutbr.cz</a> -
+		Tvorba hostujícího serveru, konfigurace serveru, práva, zabezpečení, tvorba ER, front-end, PHP registrace, PHP přihlášení, změny uživatele, seznam objednávek, dokumentace
+	</dd>
+	<dd>Konečný Martin <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xkonec79@vutbr.cz">xkonec79@vutbr.cz</a> -
+		Tvorba Use Case, ER diagram, účet Azure-hosting, back-end, naplnění databaze, formuláře s php přídáváním funkcí, SQL dotazy ,změny uživatele, dokumentace, správa gitu
+	</dd>
+  <dd>Čellár Peter <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+	    <a href="mailto:xcella01@vutbr.cz">xcella01@vutbr.cz</a> -
+		Tvorba ER diagram, back-end, formuláře, naplnění databaze, tvorba databáze, vytvoření databaze, správa dat DB, formuláře s php přídáváním funkcí
+	</dd>
+	<dt>URL aplikace</dt>
+  <dd>Jméno: <b>root</b></dd>
+  <dd>Heslo: <b>FT58S7hH55Vbnkv</b></dd>
+	<dd><a href="http://iis.sytes.net/">http://iis.sytes.net/</a></dd>
+  <dd><a href="http://20.113.69.34/">http://20.113.69.34/</a></dd>
+</dl>
+
+<h2>Uživatelé systému pro testování</h2>
+<table>
+<tbody><tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin@admin.cz</td><td>admin</td><td>admin</td></tr>
+<tr><td>knihovnik@knihovnik.cz</td><td>knihovnik</td><td>knihovník</td></tr>
+<tr><td>distributor@distributor.cz</td><td>distributor</td><td>distributor</td></tr>
+<tr><td>ctenar@ctenar.cz</td><td>ctenar</td><td>čtenář</td></tr>
+<tr><td>Neregistrovaný uživatel</td><td>Nucené dokončit registraci</td><td>Nucené dokončit registraci</td></tr>
+</tbody></table>
+<br>
+<img src="usecase.png">
+
+<h2>Implementace</h2>
+<p>Registrace je pod kartou příhlásit se. Každá role kromě admin/knihovník/distributor je implicitně považovaná za čtenáře. Projekt je implementován, že v index.php se nachází <b>HTML</b> a <b>PHP</b> dohromady.
+  Náslendě, zde nalezneme front-end, který je nastylován pomocí CSS nacházející se v <b>css/style.css</b>.
+  Obrázky jako pozadí je náčítáno z <b>img/bg.png</b>. Je v něm obsažena registrace, možnost příhlášení, práva a základní zobrazení tabulek knihovny s příslušnými akcemi.
+  Následně nalezneme podadresáři <b>/source/</b> jednotlivé akce co se stanou po zmáčknutí tlačíka, které jsou volány přes formulář, jako například přidat rezervaci, přidat knihu, přidat knihovnu.
+</p>
+
+<h3>Databáze</h3>
+
+<img src="er.png">
+
+<h2>Instalace</h2>
+
+Popis:
+<ul>
+<li>Složku s projektem vezmem a překopírujeme do <b>/var/www/</b> následně do ní přídáme framework <b>NETTE</b> (web-project-prealoded.zip, NETTE: Web Project for Nette 3.1 requires PHP 7.2) a to pouze složku <b>vendor</b></li>
+<li>Importujeme přiloženou databazy <b>Library.sql</b> do MYSQL. V našem případě se připojujem k DB pomocí PDO a to za údajů: <b>localhost, root, FT58S7hH55Vbnkv</b></li>
+
+<li>V kořenovém adresáři máme <b>Library.sql</b>, následně pomocí příkazu: <b>mysql -u root -p < Library.sql</b> danou databázi vytvoříme.</li>
+
+<br>
+<li> PHP verze: 7.4.3</li>
+<li> MYSQL: 8.0.27-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))</li>
+<li> HTML: HTML5</li>
+<li> NETTE: Web Project for Nette 3.1 requires PHP 7.2</li>
+<li> SYSTEM: Ubuntu 20.04.3 LTS (GNU/Linux 5.11.0-1021-azure x86_64)</li>
+
+</ul>
+
+<h2>Známé problémy</h2>
+<p>Žádné neobjeveny</p>
+
+
+
+</body></html>
